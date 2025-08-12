@@ -18,10 +18,25 @@
       border: 1px solid rgba(255, 255, 255, 0.2);
     }
     .parallax {
+      position: relative;
       background-image: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1500&q=80');
       background-attachment: fixed;
       background-size: cover;
       background-position: center;
+      overflow: hidden;
+    }
+    /* Overlay to darken image for better text contrast */
+    .parallax::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+    /* Make sure hero content is above overlay */
+    .hero-content {
+      position: relative;
+      z-index: 1;
     }
   </style>
 </head>
@@ -40,15 +55,17 @@
 
 <!-- Hero -->
 <section class="h-screen parallax flex flex-col justify-center items-center text-center px-4" style="padding-top: 80px;">
-  <h2 class="text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg" data-aos="fade-down">
-    Smart Solutions for Home & Agriculture
-  </h2>
-  <p class="text-lg md:text-xl mb-6 max-w-2xl" data-aos="fade-up">
-    Innovative automation tools to make your life easier and greener
-  </p>
-  <a href="#services" class="bg-green-500 text-white px-6 py-3 rounded-full text-lg hover:bg-green-400 transition">
-    Explore Services
-  </a>
+  <div class="hero-content" data-aos="fade-down">
+    <h2 class="text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
+      Smart Solutions for Home & Agriculture
+    </h2>
+    <p class="text-lg md:text-xl mb-6 max-w-2xl" data-aos="fade-up">
+      Innovative automation tools to make your life easier and greener
+    </p>
+    <a href="#services" class="bg-green-500 text-white px-6 py-3 rounded-full text-lg hover:bg-green-400 transition">
+      Explore Services
+    </a>
+  </div>
 </section>
 
 <!-- About -->
