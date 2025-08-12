@@ -1,56 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>GreenHive Test</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-</head>
-<body class="bg-gradient-to-r from-cyan-700 to-blue-900 text-white font-sans">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GreenHive Automation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-<nav class="p-4 bg-black bg-opacity-30 fixed w-full flex justify-between items-center glass">
-  <h1 class="text-2xl font-bold">🌱 GreenHive</h1>
+  <style>
+    body {
+      background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .parallax {
+      background-image: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1500&q=80');
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+<body class="text-white font-sans">
+
+<!-- Navbar -->
+<nav class="fixed w-full glass z-50 p-4 flex justify-between items-center">
+  <h1 class="text-2xl font-bold">🌱 GreenHive Automation</h1>
   <div class="space-x-6 hidden md:flex">
-    <a href="#services" class="hover:text-green-400">Services</a>
     <a href="#about" class="hover:text-green-400">About</a>
+    <a href="#services" class="hover:text-green-400">Services</a>
+    <a href="#process" class="hover:text-green-400">Process</a>
     <a href="#contact" class="hover:text-green-400">Contact</a>
   </div>
 </nav>
 
-<section class="min-h-screen flex flex-col justify-center items-center text-center p-6" style="padding-top:80px;">
-  <h2 class="text-5xl font-extrabold mb-6" data-aos="fade-down">Automation for Home & Agriculture</h2>
-  <p class="text-lg mb-6 max-w-xl" data-aos="fade-up">Innovative automation tools to make your life easier and greener</p>
-  
-  <div class="grid md:grid-cols-3 gap-8 max-w-5xl w-full">
-    <div class="bg-white bg-opacity-10 rounded-xl p-6" data-aos="zoom-in">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 mx-auto text-green-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+<!-- Hero -->
+<section class="h-screen parallax flex flex-col justify-center items-center text-center px-4" style="padding-top: 80px;">
+  <h2 class="text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg" data-aos="fade-down">
+    Smart Solutions for Home & Agriculture
+  </h2>
+  <p class="text-lg md:text-xl mb-6 max-w-2xl" data-aos="fade-up">
+    Innovative automation tools to make your life easier and greener
+  </p>
+  <a href="#services" class="bg-green-500 text-white px-6 py-3 rounded-full text-lg hover:bg-green-400 transition">
+    Explore Services
+  </a>
+</section>
+
+<!-- About -->
+<section id="about" class="py-20 px-6 bg-gradient-to-b from-transparent to-black">
+  <div class="max-w-5xl mx-auto">
+    <h3 class="text-4xl font-bold text-center mb-8" data-aos="fade-up">About Us</h3>
+    <p class="text-center text-lg leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+      At GreenHive Automation, we design and develop cutting-edge automation solutions tailored for both home and agriculture. 
+      Our mission is to empower farmers and homeowners with technology that simplifies tasks, increases efficiency, and supports sustainability. 
+      From IoT-enabled irrigation systems to smart home devices, our products are built with innovation and reliability in mind.
+    </p>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="py-20 px-6">
+  <h3 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Our Services</h3>
+  <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <div class="glass p-6 rounded-2xl flex flex-col items-center" data-aos="zoom-in">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-green-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M13 5v6h6m-6 0H7v10h10V11h-6z" />
       </svg>
-      <h3 class="text-2xl font-semibold mb-2">Home Automation</h3>
-      <p>Control lighting, appliances, and security with smart devices integrated seamlessly.</p>
+      <h4 class="text-2xl font-semibold mb-4 text-center">Home Automation</h4>
+      <p class="text-center">Control lighting, appliances, and security with smart devices integrated seamlessly into your home.</p>
     </div>
-    <div class="bg-white bg-opacity-10 rounded-xl p-6" data-aos="zoom-in" data-aos-delay="200">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 mx-auto text-green-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <div class="glass p-6 rounded-2xl flex flex-col items-center" data-aos="zoom-in" data-aos-delay="200">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-green-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M9 19V6h3m3 0h3v7a3 3 0 01-3 3H9v3" />
       </svg>
-      <h3 class="text-2xl font-semibold mb-2">Agriculture Automation</h3>
-      <p>IoT-powered irrigation, soil monitoring, and climate control for efficient farming operations.</p>
+      <h4 class="text-2xl font-semibold mb-4 text-center">Agriculture Automation</h4>
+      <p class="text-center">IoT-powered irrigation, soil monitoring, and climate control for efficient farming operations.</p>
     </div>
-    <div class="bg-white bg-opacity-10 rounded-xl p-6" data-aos="zoom-in" data-aos-delay="400">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 mx-auto text-green-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <div class="glass p-6 rounded-2xl flex flex-col items-center" data-aos="zoom-in" data-aos-delay="400">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-green-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M8 16h8M8 12h8M8 8h8M4 20h16" />
       </svg>
-      <h3 class="text-2xl font-semibold mb-2">Software Development</h3>
-      <p>Custom software and mobile apps to manage and monitor your automation systems anywhere.</p>
+      <h4 class="text-2xl font-semibold mb-4 text-center">Software Development</h4>
+      <p class="text-center">Custom software and mobile apps to manage and monitor your automation systems anywhere.</p>
     </div>
   </div>
 </section>
 
+<!-- Process -->
+<section id="process" class="py-20 px-6 bg-gradient-to-b from-transparent to-black">
+  <h3 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Our Process</h3>
+  <div class="grid md:grid-cols-5 gap-6 max-w-6xl mx-auto">
+    <div class="glass p-6 rounded-lg text-center" data-aos="fade-up">
+      <h4 class="text-xl font-semibold mb-2">1. Consultation</h4>
+      <p>Understanding your needs and challenges to tailor the perfect solution.</p>
+    </div>
+    <div class="glass p-6 rounded-lg text-center" data-aos="fade-up" data-aos-delay="100">
+      <h4 class="text-xl font-semibold mb-2">2. Design</h4>
+      <p>Creating functional and user-friendly designs with cutting-edge technology.</p>
+    </div>
+    <div class="glass p-6 rounded-lg text-center" data-aos="fade-up" data-aos-delay="200">
+      <h4 class="text-xl font-semibold mb-2">3. Development</h4>
+      <p>Building robust systems that deliver consistent performance.</p>
+    </div>
+    <div class="glass p-6 rounded-lg text-center" data-aos="fade-up" data-aos-delay="300">
+      <h4 class="text-xl font-semibold mb-2">4. Deployment</h4>
+      <p>Installing and integrating solutions into your environment.</p>
+    </div>
+    <div class="glass p-6 rounded-lg text-center" data-aos="fade-up" data-aos-delay="400">
+      <h4 class="text-xl font-semibold mb-2">5. Support</h4>
+      <p>Ongoing assistance and updates to keep your systems running smoothly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-20 px-6">
+  <div class="max-w-3xl mx-auto text-center">
+    <h3 class="text-4xl font-bold mb-4" data-aos="fade-up">Get in Touch</h3>
+    <p class="mb-6" data-aos="fade-up" data-aos-delay="100">
+      Have a project in mind? Let's make it a reality.
+    </p>
+    <a href="mailto:contact@greenhive.com" class="bg-green-500 text-white px-8 py-3 rounded-full hover:bg-green-400 transition">
+      Contact Us
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="glass py-6 text-center">
+  <p>© 2025 GreenHive Automation | Follow us:
+    <a href="#" class="text-green-400 hover:underline">Instagram</a> |
+    <a href="#" class="text-green-400 hover:underline">Facebook</a> |
+    <a href="#" class="text-green-400 hover:underline">LinkedIn</a>
+  </p>
+</footer>
+
 <script>
   AOS.init({ duration: 1000, once: true });
 </script>
-
 </body>
 </html>
